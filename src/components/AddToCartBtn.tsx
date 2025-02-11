@@ -34,7 +34,7 @@ const AddToCartButton = ({
     <button
       disabled={isAdded?.isAdded}
       onClick={handleAddToCart}
-      className={`w-fit relative overflow-hidden cursor-pointer flex items-center justify-center px-4 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-full shadow-lg transition-all duration-[2s] ease-linear transform hover:bg-white`}
+      className={`w-fit relative overflow-hidden cursor-pointer flex items-center justify-center !px-4 !py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-full shadow-lg transition-all duration-[2s] ease-linear transform hover:bg-white`}
     >
       <span
         className={`transition-all ease-in-out duration-500 ${

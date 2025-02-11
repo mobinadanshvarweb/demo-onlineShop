@@ -13,7 +13,7 @@ const Cart = () => {
         cartItems.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col bg-white/45 rounded gap-1 p-4 justify-between items-center py-3 my-4 shadow"
+            className="flex flex-col bg-white/45 rounded gap-1 !p-4 justify-between items-center !py-3 !my-4 shadow"
           >
             <div className="w-full  flex">
               <IoCloseOutline />

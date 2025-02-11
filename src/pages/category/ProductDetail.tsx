@@ -20,7 +20,7 @@ const ProductDetail = () => {
         step1="categories"
         step2={product.category}
       />
-      <section className="w-full p-8 bg-white/45 shadow-lg rounded-lg flex flex-col md:flex-row gap-8">
+      <section className="w-full !p-8 bg-white/45 shadow-lg rounded-lg flex flex-col md:flex-row gap-8">
         <figure className="md:w-1/3 flex flex-col items-center gap-4">
           <img
             src={product.image}

@@ -10,7 +10,7 @@ const Category = () => {
   return (
     <div>
       <h1>
-        <div className="flex w-full gap-3 justify-center items-center">
+        <div className="w-full flex flex-wrap gap-3 justify-center items-center">
           {data?.map((item: NavbarItem) =>
             item.subMenu?.map((subItem: SubMenuItem) => (
               <NavbarLink key={subItem.title} title={subItem.title} />

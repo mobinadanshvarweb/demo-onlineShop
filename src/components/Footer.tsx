@@ -5,7 +5,7 @@ import { PiTelegramLogoLight } from "react-icons/pi";
 import { PiPhoneLight } from "react-icons/pi";
 const Footer = () => {
   return (
-    <div className="w-full flex justify-center items-center py-10 px-20 ">
+    <div className="w-full flex justify-center items-center !py-10 !px-20 ">
       <div className="w-full flex flex-col gap-2 justify-center items-center">
         <div>
           <img

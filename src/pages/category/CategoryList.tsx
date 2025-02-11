@@ -9,10 +9,10 @@ const CategoryList = () => {
   });
 
   return (
-    <div className="flex gap-6 my-8 flex-wrap">
+    <div className="flex justify-center gap-6 !my-8 flex-wrap">
       {data?.map(
         (item: {
-          price: string;
+          price: number;
           name: string;
           _id: string;
           category: string;

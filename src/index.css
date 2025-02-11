@@ -3,7 +3,11 @@
   font-family: "Vazir";
   src: url("/fonts/Vazir.ttf");
 }
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: "Vazir", sans-serif;
 }

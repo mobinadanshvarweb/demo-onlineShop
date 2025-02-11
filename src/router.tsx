@@ -9,6 +9,9 @@ import Category from "./pages/category/Category";
 import CategoryProduct from "./pages/category/CategoryProduct";
 import ProductDetail from "./pages/category/ProductDetail";
 import Cart from "./pages/cart/Cart";
+import UserRegisterAndLogin from "./pages/login/UserRegisterAndLogin";
+import Login from "./pages/login/Login";
+import Register from "./pages/login/Register";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +30,15 @@ const router = createBrowserRouter([
     ],
   },
   { path: "*", element: <NotFound /> },
+  {
+    path: "/user",
+    element: <UserRegisterAndLogin />,
+    children: [
+      { path: "/user", element: <Register /> },
+      { path: "/user/register", element: <Register /> },
+      { path: "/user/login", element: <Login /> },
+    ],
+  },
 ]);
 
 export default router;
