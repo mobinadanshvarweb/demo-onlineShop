@@ -1,15 +1,18 @@
 import { Link } from "react-router";
+import { formatNumber } from "../../util/formatNumber";
 
 const CategoryCart = ({
   name,
   price,
   id,
   category,
+  src,
 }: {
-  price: string;
+  price: number;
   name: string;
-  id: number;
+  id: string;
   category: string;
+  src: string;
 }) => {
   return (
     <div className="group flex min-w-52 bg-white/45 flex-col my-4 cursor-default gap-3 rounded-lg shadow-xl p-5 hover:-translate-y-0.5 transition-all duration-500">
@@ -27,7 +30,7 @@ const CategoryCart = ({
           </span>
         </div>
 
-        <img src="/img/banner.jpg" alt="" className="w-52 rounded" />
+        <img src={src} alt="" className="w-52 h-56 rounded object-cover" />
       </div>
       <div className=" py-2 flex flex-col text-xs gap-4">
         <div className="flex justify-between items-center">
@@ -36,9 +39,9 @@ const CategoryCart = ({
             {category}
           </span>
         </div>
-        <span className="flex justify-end">{price}</span>
+        <span className="flex justify-end">{formatNumber(price)} تومان</span>
         <Link
-          to={`/category/${category.toLowerCase()}/${id}`}
+          to={`/categories/${category}/${id}`}
           className="w-full py-1.5 cursor-pointer flex justify-center items-center rounded transition-all duration-300 text-sm hover:bg-white hover:shadow hover:text-amber-600 bg-amber-600 text-white"
         >
           جزئیات

@@ -1,29 +1,31 @@
 import { useParams } from "react-router";
-import categoryData from "../../data/category-data";
 import Breadcrumbs from "../../components/BreadCrumbs";
 import AddToCartButton from "../../components/AddToCartBtn";
+import useProduct from "../../hooks/useProduct";
+import { Product } from "../../types/type";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const product = categoryData.find((item) => item.id.toString() === id);
+  const { data } = useProduct();
+  const product = data?.find((item: Product) => item._id.toString() === id);
 
   if (!product) {
     return <h1>محصولی یافت نشد!</h1>;
   }
 
   return (
-    <>
+    <div className="flex flex-col gap-4 w-[90%]">
       <Breadcrumbs
-        name={product.name}
-        step1="category"
+        name={product?.name}
+        step1="categories"
         step2={product.category}
       />
-      <section className="w-full my-12 p-8 bg-white/45 shadow-lg rounded-lg flex flex-col md:flex-row gap-8">
+      <section className="w-full p-8 bg-white/45 shadow-lg rounded-lg flex flex-col md:flex-row gap-8">
         <figure className="md:w-1/3 flex flex-col items-center gap-4">
           <img
-            src="/img/banner.jpg"
+            src={product.image}
             alt={product.name}
-            className="w-full rounded-xl shadow-md transition-transform duration-300 hover:scale-105"
+            className="w-full h-80 object-cover rounded-xl shadow-md transition-transform duration-300 hover:scale-105"
           />
         </figure>
         <article className="flex-1 flex flex-col gap-5 justify-center">
@@ -39,11 +41,16 @@ const ProductDetail = () => {
           </p>
 
           <div className="flex items-center justify-end gap-4 mt-4">
-            <AddToCartButton />
+            <AddToCartButton
+              name={product.name}
+              price={product.price}
+              src={product.src}
+              id={product.id}
+            />
           </div>
         </article>
       </section>
-    </>
+    </div>
   );
 };
 

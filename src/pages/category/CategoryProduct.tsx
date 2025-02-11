@@ -1,31 +1,37 @@
 import { useParams } from "react-router";
-import categoryData from "../../data/category-data";
 import CategoryCart from "./CategoryCart";
 import Breadcrumbs from "../../components/BreadCrumbs";
 import NoData from "../../components/NoData";
+import useProduct from "../../hooks/useProduct";
+import { Product } from "../../types/type";
 
 const CategoryProduct = () => {
   const { category } = useParams();
-  const data = categoryData.filter((item) => item.category === category);
-  const name = data.map((item) => item.category);
+  const { data } = useProduct();
+
+  const data1 = data?.filter((item: Product) => item.category === category);
+  const name = data1?.map((item: Product) => item?.category);
+  console.log(category);
+
   return (
     <div className="flex flex-col">
-      <Breadcrumbs step1="category" name={name[0]} />
+      <Breadcrumbs step1="categories" name={name[0]} />
       <div className="w-full flex items-center gap-4 flex-wrap">
-        {data.length > 0 ? (
-          data.map((item) => {
+        {data1?.length > 0 ? (
+          data1?.map((item: Product) => {
             return (
               <CategoryCart
+                src={item.image}
                 category={item.category}
-                id={item.id}
+                id={item._id}
                 name={item.name}
                 price={item.price}
-                key={item.id}
+                key={item._id}
               />
             );
           })
         ) : (
-          <NoData src="/category" />
+          <NoData src="/categories" />
         )}
       </div>
     </div>

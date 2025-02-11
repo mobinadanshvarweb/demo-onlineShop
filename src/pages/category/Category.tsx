@@ -1,23 +1,21 @@
-import { Link } from "react-router";
-import navLinks from "../../data/nav-links";
 import CategoryList from "./CategoryList";
+import NavbarLink from "../nav-bar/NavBarLink";
+import { NavbarItem, SubMenuItem } from "../../types/type";
+import useNavbar from "../../hooks/useNavBar";
 
 const Category = () => {
+  const { data } = useNavbar();
+  console.log(data);
+
   return (
     <div>
       <h1>
-        <div className="flex w-full  gap-3 justify-center items-center">
-          {navLinks[1].subMenu?.map((navlink) => {
-            return (
-              <Link
-                to={`/category/${navlink.name.toLowerCase()}`}
-                className="px-4 py-2 text-sm rounded-3xl shadow transition-all duration-300 hover:bg-white hover:text-amber-500 hover:-translate-y-0.5 bg-amber-600 text-white"
-                key={navlink.id}
-              >
-                {navlink.name}
-              </Link>
-            );
-          })}
+        <div className="flex w-full gap-3 justify-center items-center">
+          {data?.map((item: NavbarItem) =>
+            item.subMenu?.map((subItem: SubMenuItem) => (
+              <NavbarLink key={subItem.title} title={subItem.title} />
+            ))
+          )}
         </div>
       </h1>
       <CategoryList />

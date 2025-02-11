@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 const NoData = ({ src }: { src: string }) => {
   return (
-    <div className="w-full my-6 flex justify-center items-center flex-col  bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 p-8 rounded-lg shadow-lg">
+    <div className="w-full my-6 flex justify-center items-center flex-col">
       <div className="bg-white p-8 rounded-full shadow-xl mb-4">
         <VscSearchStop size={60} className="text-gray-500 animate-bounce" />
       </div>
