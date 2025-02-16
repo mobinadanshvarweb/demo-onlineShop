@@ -15,8 +15,8 @@ const CategoryCart = ({
   src: string;
 }) => {
   return (
-    <div className="group flex min-w-52 bg-white/45 flex-col !my-4 cursor-default gap-3 rounded-lg shadow-xl !p-5 hover:-translate-y-0.5 transition-all duration-500">
-      <div className="relative overflow-x-hidden">
+    <div className="group flex min-w-52 bg-white/45 flex-col !my-4 cursor-default gap-3 shadow-xl !p-5">
+      <div className="relative overflow-hidden">
         <div className="absolute group-hover:translate-x-0 transition-all duration-500 top-0 right-0 flex flex-col translate-x-100">
           <span
             title="افزودن به علاقه مندی"
@@ -30,7 +30,11 @@ const CategoryCart = ({
           </span>
         </div>
 
-        <img src={src} alt="" className="w-52 h-56 rounded object-cover" />
+        <img
+          src={src}
+          alt=""
+          className="w-52 h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+        />
       </div>
       <div className=" !py-2 flex flex-col text-xs gap-4">
         <div className="flex justify-between items-center">

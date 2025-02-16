@@ -13,3 +13,10 @@ export type Product = {
   category: string;
   image: string;
 };
+
+export type InputProps = {
+  type: string;
+  placeHolder: string;
+  onchange: (event: React.ChangeEvent<HTMLInputElement>) => void; // اصلاح این قسمت
+  classname?: string;
+};

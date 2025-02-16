@@ -25,7 +25,7 @@ const ProductDetail = () => {
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-80 object-cover rounded-xl shadow-md transition-transform duration-300 hover:scale-105"
+            className="w-full h-80 object-cover rounded-xl shadow-md"
           />
         </figure>
         <article className="flex-1 flex flex-col gap-5 justify-center">
